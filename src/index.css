@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+body {
+  /* font-family: Urbanist; */
+  font-family: 'Courier New', Courier, monospace;
+  
+   background-color: #0f172a;
+
+}
+/* {
+  background-image: url('../public/PlaneImages/img11.png'); 
+  background-size: cover;       
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+} */
