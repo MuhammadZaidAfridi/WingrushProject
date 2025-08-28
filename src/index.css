@@ -3,14 +3,15 @@
 body {
   /* font-family: Urbanist; */
   font-family: 'Courier New', Courier, monospace;
-  
-   background-color: #0f172a;
+
+
+  /* Overlay + Image combined */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('../public/PlaneImages/img11.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
 }
-/* {
-  background-image: url('../public/PlaneImages/img11.png'); 
-  background-size: cover;       
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
-} */

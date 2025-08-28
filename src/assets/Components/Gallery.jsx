@@ -10,6 +10,7 @@ import img8 from "../../../public/Gallery/8.png";
 import img9 from "../../../public/Gallery/9.png";
 import img10 from "../../../public/Gallery/11.png";
 import img11 from "../../../public/Gallery/0.png";
+import {motion,easeInOut} from 'framer-motion'
 
 const Gallery = () => {
   // ✅ Store images in an array with extra info
@@ -48,20 +49,25 @@ const Gallery = () => {
       {/* Outer container */}
       <div className="w-full min-h-screen px-4 sm:px-6 lg:px-8">
         {/* ✅ Heading */}
-        <div className="flex justify-center items-center relative z-10 text-white w-40 sm:w-48 mx-auto text-2xl sm:text-3xl xl:text-5xl rounded-xl pt-8">
+        <div className="flex justify-center items-center relative z-10 mt-12 text-white w-40 sm:w-48 mx-auto text-2xl sm:text-3xl xl:text-5xl rounded-xl pt-8">
           Gallery
         </div>
 
         {/* ✅ Container */}
         {/* For Desktop  */}
-        <div className="md:hidden xl:block bg-gray-800 w-full sm:w-[95%] mx-auto rounded-4xl border border-[#dfdff0] p-4 sm:p-8 lg:p-10 mt-10 sm:mt-14">
+        <motion.div
+          className="md:hidden xl:block bg-black w-full sm:w-[95%] mx-auto rounded-4xl border border-[#dfdff0] p-4 sm:p-8 lg:p-10 mt-10 sm:mt-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: easeInOut }}
+        >
           {/* ✅ Responsive Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 ">
             {images.map((img, index) => (
               <div
                 key={index}
                 className={`relative group bg-[#052b2f] rounded-2xl border border-black
-                  overflow-hidden shadow-[0_0_10px_rgba(0,0,0)]
+                  overflow-hidden shadow-[0_0_10px_rgba(200,200,200)]  ]
                   transition-all duration-500 hover:scale-105 active:scale-105
                   ${img.tall ? "sm:row-span-2" : ""}
                   ${img.wide ? "sm:col-span-2" : ""}`}
@@ -79,7 +85,7 @@ const Gallery = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* For Mobile and Ipad  */}
         <div className="hidden sm:block xl:hidden bg-gray-800 w-full sm:w-[95%] mx-auto rounded-4xl border border-[#dfdff0] p-4 sm:p-8 lg:p-10 mt-10 sm:mt-14">

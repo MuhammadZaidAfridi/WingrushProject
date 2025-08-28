@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { FaFacebookF, FaInstagram, } from "react-icons/fa";
 
@@ -9,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { navLinksdata } from "../Constant";
 import { Link } from "react-scroll";
 import { motion, easeInOut } from "framer-motion";
+import Title from "../../../public/Title.png";
 
 const Footer = () => {
   
@@ -50,16 +49,15 @@ const Footer = () => {
         >
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="bg-gradient-to-tr from-indigo-500 via-purple-500 to-blue-500 rounded-full p-2 shadow-md">
-              <span className="text-white font-bold text-lg">WR</span>
-            </div>
+            {/*  */}
             <span className="text-white text-xl font-semibold lg:text-xl">
-              WingRush
+              {/* WingRush */}
+              <img src={Title} alt="" className="w-36 h-10"/>
             </span>
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center  text-sm md:text-base lg:text-xl font-medium">
+          <nav className="flex flex-wrap justify-center  text-sm md:text-md lg:text-xl font-medium">
             <ul className=" md:flex items-center gap-3 lg:gap-5">
               {navLinksdata.map(({ _id, title, link }) => (
                 <li

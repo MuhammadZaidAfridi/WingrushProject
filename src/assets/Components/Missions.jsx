@@ -21,7 +21,6 @@ import img5 from '../../../public/Missions-planetumbnails/5.jpg'
 import img6 from '../../../public/Missions-planetumbnails/4.jpg'
 import img7 from "../../../public/Missions-planetumbnails/7.jpg";
 import img8 from "../../../public/Missions-planetumbnails/8.jpg";
-
 const Mission = () => {
   const [open, setOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
@@ -32,15 +31,13 @@ const Mission = () => {
       title: "Video 1",
       desc: "Fly through narrow valleys, dogdge enemy fire and destroy  towers to weaken enemy control . upgrade your plane to survive growing threats",
       img: img1,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      link: video1,
+       link: video1,
     },
     {
       id: 2,
       title: "Video 2",
       desc: "Destroy towers, fight monsters and dragons, and shoot gas tanks for extra points while navigating deadly defenses in the mountains.",
       img: img2,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       link: video2,
     },
     {
@@ -48,7 +45,6 @@ const Mission = () => {
       title: "Video 3",
       desc: "Blast monsters on the bridge before they reach the city. Aim carefully—each shot counts against the heavily armed enemies",
       img: img3,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       link: video3,
     },
     {
@@ -56,7 +52,6 @@ const Mission = () => {
       title: "Video 4",
       desc: "Take down the patrol plane before it alerts reinforcements. Use precise timing and quick reflexes to clear the skies.",
       img: img4,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       link: video4,
     },
     {
@@ -64,7 +59,6 @@ const Mission = () => {
       title: "Video 5",
       desc: "Stop fast, deadly reptors from crossing the bridge. Use your firepower to protect the city before they break through.",
       img: img5,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       link: video5,
     },
     {
@@ -72,7 +66,6 @@ const Mission = () => {
       title: "Video 6",
       desc: "Dodge heavy fire and hit weak points to defeat a powerful enemy with advanced weapons. This is your toughest battle yet.",
       img: img6,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       link: video6,
     },
     {
@@ -80,7 +73,6 @@ const Mission = () => {
       title: "Video 7",
       desc: "Make a perfect landing on the platform to secure the city. One wrong move could risk the mission—precision is key.",
       img: img7,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       link: video7,
     },
     {
@@ -88,7 +80,6 @@ const Mission = () => {
       title: "Video 8",
       desc: "Dodge flames and shoot down rampaging dragons. Hit their weak spots to survive their fiery onslaught and protect your plane.",
       img: img8,
-      // link: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       link: video8,
     },
   ];
@@ -102,36 +93,31 @@ const Mission = () => {
     <div
       className="relative bg-fixed w-full h-full  bg-center bg-cover overflow-hidden py-5"
       style={{ backgroundImage: `url(${img12})` }}
-      // initial={{
-      //   opacity: 0,
-      //   x: 500,
-      // }}
-      // whileInView={{
-      //   opacity: 1,
-      //   x: 0,
-      // }}
-      // transition={{
-      //   duration: 2,
-      //   ease: easeInOut,
-      // }}
     >
       {/* 🔹 Black Overlay */}
 
-      <PlanesCarousel />  
-      <div className="absolute inset-0  bg-black/85 "></div>
+      {/* <PlanesCarousel />   */}
+      <div className="absolute inset-0  bg-black/80 "></div>
+      <PlanesCarousel />
+
       <div
-        className="text-white relative pt-10 z-20 md:text-5xl flex justify-center items-center "
-        id="mission"
+        className="text-white relative pt-10 z-20 text-2xl md:text-5xl flex justify-center items-center font-bold "
+        id="missions"
       >
         Missoins
       </div>
       {/* 🔹 Main Content */}
-      <div className="relative z-10  max-w-[1200px] mx-auto flex flex-wrap items-center justify-center gap-6 py-10 px-4 md:px-0  ">
+      <motion.div
+        className="relative z-10  max-w-[1200px] mx-auto flex flex-wrap items-center justify-center gap-6 py-10 px-4 md:px-0  "
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, ease: easeInOut }}
+      >
         {videos.map((video) => (
           <div
             key={video.id}
             style={{ backgroundImage: `url(${video.img})` }}
-            className="relative bg-cover w-[380px] bg-center h-52 flex items-center justify-center rounded-lg group  shadow-[0_0_10px_rgba(0,0,0)]"
+            className="relative bg-cover w-[380px] bg-center h-52 flex items-center justify-center rounded-lg group border-white border  hover:shadow-[0_0_10px_rgba(200,200,200)]  hover:scale-105 duration-500 "
           >
             <div className="absolute inset-0 bg-black/3 rounded-lg"></div>
             {/* <span className="text-lg font-semibold hidden group-hover:block text-white">
@@ -142,15 +128,14 @@ const Mission = () => {
             <div className="absolute inset-0  md:bg-black/70 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-xl text-black font-semibold md:text-white p-3 rounded-lg">
               <button
                 onClick={() => openModal(video.link)}
-                className="mb-2 text-xs text-center md:text-sm cursor-pointer"
+                className="mb-2 text-white text-xs text-center md:text-sm cursor-pointer"
               >
                 {video.desc}
               </button>
-             
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
 
       {/* 🔹 Modal */}
       {open && (
@@ -188,7 +173,7 @@ const Mission = () => {
         </div>
       )}
       <Enemies />
-      <Gallery/>
+      <Gallery />
     </div>
   );
 };

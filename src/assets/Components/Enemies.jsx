@@ -9,6 +9,9 @@ import img7 from "../../../public/Enemies/enemy/rotate/13.gif";
 import img888 from "../../../public/Enemies/enemy/rotate/28.gif";
 import img9 from "../../../public/Enemies/enemy/rotate/26.gif";
 import img13 from "../../../public/Enemies/enemy/rotate/10.gif";
+import imgBG from "../../../public/Enemies/enemy/4.png";
+import {motion,easeInOut} from 'framer-motion'
+
 
 // Array of slides (image + content)
 const slides = [
@@ -80,20 +83,23 @@ const Enemies = () => {
   };
 
   return (
-    <div id="enemies">
-      <div className="flex justify-center md:text-5xl text-3xl pt-4 relative z-10 text-white">
+    <div id="enemies" className="pt-5">
+      <div className="flex justify-center text-2xl  md:text-5xl  pt-4 pb-5 relative z-10 text-white font-bold">
         Enemies
       </div>
-      <div
-        className="relative w-full max-w-6xl mx-auto mt-5 pb-10 md:pb-7 h-auto md:h-[425px] md:rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row items-center justify-center"
+      <motion.div
+        className="relative border border-gray-400  duration-500 w-full max-w-6xl mx-auto  pb-10 md:pb-7 h-auto md:h-[425px] md:rounded-2xl overflow-hidden  flex flex-col md:flex-row items-center justify-center"
         style={{
-          backgroundImage: `url(${img8})`,
+          backgroundImage: `url(${imgBG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, ease: easeInOut }}
       >
         {/* Black Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/45"></div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full h-full px-6 md:px-12 pb-16 md:pb-0">
@@ -118,7 +124,7 @@ const Enemies = () => {
             <h1 className="text-2xl md:text-4xl font-bold text-white">
               {slides[current].title}
             </h1>
-            <p className="mt-3 text-gray-200 text-sm md:text-base leading-relaxed">
+            <p className="mt-3 text-gray-200 text-sm md:text-xl leading-relaxed">
               {slides[current].description}
             </p>
           </div>
@@ -146,13 +152,13 @@ const Enemies = () => {
             <div
               key={index}
               onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full cursor-pointer ${
+              className={`w-2 h-2 rounded-full cursor-pointer ${
                 current === index ? "bg-blue-500" : "bg-gray-300"
               }`}
             ></div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

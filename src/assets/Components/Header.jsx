@@ -1,171 +1,7 @@
-// import React, { useState } from "react";
-// import logo from '../../../public/images/logo.png'
-
-// import { FiSun } from "react-icons/fi";
-// import { BsFillCloudSunFill } from "react-icons/bs";
-// import { useContext } from "react";
-// import MyContext from "../Context/MyContext";
-// // import myContext from "../Context/MyContext";
-// import { IoMdMenu } from "react-icons/io";
-// import { IoClose } from "react-icons/io5";
-// import { navLinksdata } from "../Constant/index";
-// import { Link } from "react-scroll";
-
-// function Header() {
-//   const [toggle, setToggle] = useState(false);
-
-//   const context = useContext(MyContext);
-//   const { mode, toggleMode } = context;
-
-//   return (
-//     //  bg-[#110475] color
-//     <>
-//       {/* // Header main container */}
-//       <div className="max-w-[1600px] mx-auto  sticky z-50 top-0  ">
-//         <div
-//           className="flex justify-between items-center  px-14 pt-2 bg-black text-white shadow-md"
-//           style={{
-//             backgroundColor: mode === "dark" ? "rgb(62,64,66)" : "",
-//             //  color : mode === 'white' ? '#ffff' :"" }}>
-//             color: mode === "dark" ? "white" : "",
-//           }}
-//         >
-//           {/* Logo Portion  */}
-//           <div className="w-[200px] ">
-//             <img
-//               // onClick={showToggle}
-//               src={logo}
-//               alt=""
-//               className="w-16 h-16 md:w-20 md:h-20  pl-2 "
-//             />
-//           </div>
-
-//           {/* Navbar section  */}
-//           {/* Desktop section  */}
-//           <ul className=" hidden  w-[700px] md:flex items-center  space-x-3 ml-3  lg:space-x-6 justify-center">
-//             {navLinksdata.map(({ _id, title, link }) => (
-//               <li
-//                 className="  text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-orange-600 duration-300 hover:border-b-2 border-white"
-//                 key={_id}
-//               >
-//                 <Link
-//                   activeClass="active"
-//                   to={link}
-//                   spy={true}
-//                   smooth={true}
-//                   offset={-95}
-//                   duration={900}
-//                 >
-//                   {title}
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul>
-
-//           {/* Mobile section */}
-//           {/* <ul
-//             className={`duration-500 md:hidden bg-black fixed text-white  top-16 w-full sm:w-[500px]  sm:text-center items-center justify-center p-20 h-screen
-//               ${toggle ? "left-[0]" : "left-[-100%] "}`}
-//             style={{
-//               backgroundColor: mode === "dark" ? "rgb(62,64,66)" : "",
-//               //  color : mode === 'white' ? '#ffff' :"" }}>
-//               color: mode === "dark" ? "white" : "",
-//             }}
-//           >
-//             {navLinksdata.map(({ _id, title, link }) => (
-//               <li
-//                 className="   font-normal text-gray-400 tracking-wide cursor-pointer hover:text-prange-500 hover:border-b-2 border-amber-500 duration-300 py-3"
-//                 key={_id}
-//               >
-//                 <Link
-//                   activeClass="active"
-//                   to={link}
-//                   spy={true}
-//                   smooth={true}
-//                   offset={-95}
-//                   duration={900}
-//                 >
-//                   {title}
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul> */}
-//           {/* Mobile section */}
-//           <ul
-//             className={`duration-500 md:hidden fixed top-16 w-full sm:w-[500px] sm:text-center items-center justify-center p-20 h-screen
-//     ${toggle ? "left-0" : "left-[-100%]"}
-//     bg-black text-white`}
-//             style={{
-//               backgroundColor: mode === "dark" ? "rgb(62,64,66)" : "",
-//               color: mode === "dark" ? "white" : "",
-//             }}
-//           >
-//             {navLinksdata.map(({ _id, title, link }) => (
-//               <li
-//                 className="font-normal text-gray-400 tracking-wide cursor-pointer hover:text-orange-500 hover:border-b-2 border-amber-500 duration-300 py-3"
-//                 key={_id}
-//               >
-//                 <Link
-//                   activeClass="active"
-//                   to={link}
-//                   spy={true}
-//                   smooth={true}
-//                   offset={-95}
-//                   duration={900}
-//                   onClick={() => setToggle(false)} // ✅ Hides menu after clicking
-//                 >
-//                   {title}
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul>
-
-//           <div className="flex items-center space-x-3.5">
-//             <button className="  hidden md:block border rounded-md px-3 py-1 bg-red-800 hover:cursor-pointer shadow-[0_0_10px_rgba(0,0,0)]">
-//               Download
-//             </button>
-
-//             {toggle ? (
-//               <IoClose
-//                 onClick={() => setToggle(!toggle)}
-//                 className="text-2xl "
-//               />
-//             ) : (
-//               <IoMdMenu
-//                 onClick={() => setToggle(!toggle)}
-//                 className="text-2xl md:hidden "
-//               />
-//             )}
-
-//             <div onClick={toggleMode} className="text-2xl ">
-//               {mode === "light" ? (
-//                 <FiSun />
-//               ) : "dark" ? (
-//                 <BsFillCloudSunFill />
-//               ) : (
-//                 ""
-//               )}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Header;
-
-
-
 
 import React, { useState } from "react";
 import logo from "../../../public/images/logo.png";
 
-import { FiSun } from "react-icons/fi";
-import { BsFillCloudSunFill } from "react-icons/bs";
-// import { useContext } from "react";
-// import MyContext from "../Context/MyContext";
-// import myContext from "../Context/MyContext";
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { navLinksdata } from "../Constant/index";
@@ -174,8 +10,6 @@ import { Link } from "react-scroll";
 function Header() {
   const [toggle, setToggle] = useState(false);
 
-  // const context = useContext(MyContext);
-  // const { mode, toggleMode } = context;
 
   return (
     //  bg-[#110475] color
@@ -198,7 +32,7 @@ function Header() {
           <ul className=" hidden  w-[700px] md:flex items-center  space-x-3 ml-3  lg:space-x-6 justify-center">
             {navLinksdata.map(({ _id, title, link }) => (
               <li
-                className="  text-base font-normal  tracking-wide cursor-pointer hover:text-orange-500 hover:font-semibold duration-300 hover:border-b-2 border-white"
+                className="  text-base font-normal  tracking-wide cursor-pointer hover:text-orange-500 hover:font-semibold duration-300 hover:border-b-2 border-white hover:text-xl"
                 key={_id}
               >
                 <Link
@@ -215,43 +49,14 @@ function Header() {
             ))}
           </ul>
 
-          {/* Mobile section */}
-          {/* <ul
-            className={`duration-500 md:hidden bg-black fixed text-white  top-16 w-full sm:w-[500px]  sm:text-center items-center justify-center p-20 h-screen 
-              ${toggle ? "left-[0]" : "left-[-100%] "}`}
-            style={{
-              backgroundColor: mode === "dark" ? "rgb(62,64,66)" : "",
-              //  color : mode === 'white' ? '#ffff' :"" }}>
-              color: mode === "dark" ? "white" : "",
-            }}
-          >
-            {navLinksdata.map(({ _id, title, link }) => (
-              <li
-                className="   font-normal text-gray-400 tracking-wide cursor-pointer hover:text-prange-500 hover:border-b-2 border-amber-500 duration-300 py-3"
-                key={_id}
-              >
-                <Link
-                  activeClass="active"
-                  to={link}
-                  spy={true}
-                  smooth={true}
-                  offset={-95}
-                  duration={900}
-                >
-                  {title}
-                </Link>
-              </li>
-            ))}
-          </ul> */}
-          {/* Mobile section */}
           <ul
-            className={`duration-500 md:hidden fixed top-16 w-full sm:w-[500px] sm:text-center items-center justify-center p-20 h-screen
+            className={`duration-500 md:hidden fixed top-16 w-full  sm:w-[500px] sm:text-center items-center justify-center p-20 h-screen
     ${toggle ? "left-0" : "left-[-100%]"} 
     bg-black text-white`}
           >
             {navLinksdata.map(({ _id, title, link }) => (
               <li
-                className="font-normal text-gray-400 tracking-wide cursor-pointer hover:text-orange-500 hover:border-b-2 border-amber-500 duration-300 py-3"
+                className="font-normal  text-gray-400 tracking-wide cursor-pointer hover:text-orange-500 hover:border-b-2 border-amber-500 duration-300 py-3"
                 key={_id}
               >
                 <Link
@@ -270,21 +75,14 @@ function Header() {
           </ul>
 
           <div className="flex items-center space-x-3.5">
-            {/* <button className="  hidden md:block border rounded-md px-3 py-1 bg-blue-600 hover:cursor-pointer shadow-[0_0_10px_rgba(0,0,0)]">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.ignipulse.TrackMaster&pcampaignid=web_share"
-                target="_Newblank"
-              >
-                Download{" "}
-              </a>
-            </button> */}
+          
             <button className="bg-orange-500 px-3 text-xs md:px-5 hover:font-semibold py-1 text-white md:text-xl rounded-md hover:cursor-pointer shadow-[0_0_10px_rgba(200,200,200)] hover:scale-105 duration-500">
               <a
                 href="https://play.google.com/store/apps/details?id=com.ignipulse.TrackMaster&pcampaignid=web_share"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Explore
+                Download
               </a>
             </button>
             {toggle ? (
