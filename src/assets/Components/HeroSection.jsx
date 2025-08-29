@@ -4,6 +4,8 @@ import video from "../../../public/Videos/Wingrush-trailer.mp4";
 import img1 from '../../../public/PlaneImages/img11.png'
 // import {text} from '../Components/Text/text.png'
 import Title from '../../../public/Title.png'
+import { FaYoutube } from "react-icons/fa6";
+
 
 function HeroSection() {
   const [showTrailer, setShowTrailer] = useState(false);
@@ -39,7 +41,7 @@ function HeroSection() {
         transition={{ duration: 2, ease: easeInOut }}
       >
         <div className="md:text-8xl font-bold space-y-2 tracking-wide">
-                 <img
+          <img
             src={Title}
             alt="picture"
             className="w-64 h-44 lg:h-50 lg:w-1/2 "
@@ -52,7 +54,7 @@ function HeroSection() {
         <div className="mt-5 space-x-5 space-y-2">
           <button className="bg-orange-500 px-9 py-2 hover:font-semibold text-white text-xl rounded-md hover:cursor-pointer shadow-[0_0_10px_rgba(200,200,200)] hover:scale-105 duration-500">
             <a
-              href="https://play.google.com/store/apps/details?id=com.ignipulse.TrackMaster&pcampaignid=web_share"
+              href="https://play.google.com/store/search?q=wingrush&c=apps&hl=en"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -81,7 +83,7 @@ function HeroSection() {
         <div className="mt-5 space-x-3 space-y-4">
           <button className="bg-orange-500 px-3 py-1 hover:font-semibold text-white text-xl rounded-md hover:cursor-pointer shadow-[0_0_10px_rgba(200,200,200)] hover:scale-105 duration-500">
             <a
-              href="https://play.google.com/store/apps/details?id=com.ignipulse.TrackMaster&pcampaignid=web_share"
+              href="https://play.google.com/store/search?q=wingrush&c=apps&hl=en"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -98,41 +100,42 @@ function HeroSection() {
       </div>
 
       {/* Trailer Modal */}
+      {/* Trailer Modal */}
       {showTrailer && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[50]">
-          <div className="relative w-[80%] h-[50%] pb-10 md:w-[80%] md:h-[75%] bg-black rounded-lg shadow-lg flex flex-col items-center justify-center">
-            <div className="flex md:justify-evenly items-center">
-              
-              <button
-                onClick={handleCloseTrailer}
-                className="absolute bottom-1 md:left-32 bg-red-600 hover:bg-red-700 text-white md:px-3 py-1 mb-2.5 rounded-md shadow-lg cursor-pointer z-[10000]"
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[50] p-2">
+          <div className="relative w-full max-w-[95%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] bg-black rounded-lg shadow-lg flex flex-col items-center justify-center p-2">
+            {/* Video Player */}
+            <iframe
+              src="https://www.youtube.com/embed/CyB1QR-JpoQ?autoplay=0&si=gHQLa05DhoPrcUEd"
+              title="Wingrush Trailer"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] xl:h-[480px] rounded-lg"
+            ></iframe>
+
+            {/* Buttons Section */}
+            <div className="flex items-center justify-between w-full px-4 mt-4">
+              {/* YouTube Button */}
+              <a
+                href="https://www.youtube.com/watch?v=CyB1QR-JpoQ&autoplay=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg shadow-md text-sm sm:text-base md:text-lg transition-all duration-300"
               >
-                <a
-                  href="https://youtu.be/CyB1QR-JpoQ?si=Mu6Pzh-wZ0-CL3DJ"
-                  target="_Newblank"
-                >
-                  {" "}
-                  Youtube
-                </a>
-              </button>
+                <FaYoutube className="text-xl sm:text-2xl md:text-3xl" />
+                <span className="hidden sm:block">Watch on YouTube</span>
+              </a>
+
+              {/* Close Button */}
               <button
                 onClick={handleCloseTrailer}
-                className="absolute bottom-1 md:right-32 bg-gray-600 hover:bg-gray-700 text-white px-3 py-1 mb-2.5 rounded-md shadow-lg cursor-pointer z-[10000] font-bold"
+                className="bg-gray-600 hover:bg-gray-700 text-white px-3 py-2 rounded-lg shadow-md font-semibold text-sm sm:text-base md:text-lg transition-all duration-300"
               >
                 Close
               </button>
             </div>
-            {/* Video Player */}
-            <iframe
-              
-              src="https://www.youtube.com/embed/CyB1QR-JpoQ?si=gHQLa05DhoPrcUEd"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-              className="w-[350px] h-[350px] sm:w-[450px] sm:h-[250px] md:w-[625px] md:h-[400px] lg:w-[815px] lg:h-[380px] xl:w-[1050px] xl:h-[450px]"
-            ></iframe>
           </div>
         </div>
       )}

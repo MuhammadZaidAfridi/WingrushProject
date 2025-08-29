@@ -41,7 +41,7 @@ const Footer = () => {
 
         {/* Center Section */}
         <motion.div
-          className="flex flex-col items-center gap-6"
+          className="flex flex-col items-center gap-6 pt-6"
           //  framer-anomation
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ const Footer = () => {
             {/*  */}
             <span className="text-white text-xl font-semibold lg:text-xl">
               {/* WingRush */}
-              <img src={Title} alt="" className="w-36 h-10"/>
+              <img src={Title} alt="" className="w-36 h-10" />
             </span>
           </div>
 
@@ -61,7 +61,7 @@ const Footer = () => {
             <ul className=" md:flex items-center gap-3 lg:gap-5">
               {navLinksdata.map(({ _id, title, link }) => (
                 <li
-                  className="  text-base font-normal text-white tracking-wide cursor-pointer hover:text-orange-600 hover:font-semibold duration-300"
+                  className="  text-base lg:text-xl font-normal text-white tracking-wide cursor-pointer hover:text-orange-600 hover:font-semibold duration-300"
                   key={_id}
                 >
                   <Link
@@ -80,34 +80,34 @@ const Footer = () => {
           </nav>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center gap-6 text-2xl">
+          <div className="flex justify-center gap-6 text-2xl ">
             <a
               target="_newTab"
               href="https://www.facebook.com/igniPulse/"
-              className="text-gray-400 hover:text-white transition"
+              className="text-gray-50  transition"
             >
-              <FaFacebookF className="text-blue-600 hover:text-blue-800" />
+              <FaFacebookF className=" rounded-full  text-3xl md:text-4xl  bg-blue-700 hover:bg-blue-800 p-2 " />
             </a>
             <a
               target="_newTab"
               href="https://www.tiktok.com/@ignipulse?_t=ZN-8vYUvu4nZZO&_r=1"
-              className="text-gray-400 hover:text-white transition"
+              className="text-gray-50  transition"
             >
-              <RiTiktokFill />
+              <RiTiktokFill className="rounded-full text-3xl md:text-4xl bg-black border border-white p-2 " />
             </a>
             <a
               target="_newTab"
               href="https://www.instagram.com/ignipulse/?igsh=MTd4cDZ4YnZ3OTVnbg%3D%3D#"
-              className="text-gray-400 hover:text-white transition"
+              className="text-white transition"
             >
-              <FaInstagram className="text-pink-600 hover:text-pink-800" />
+              <FaInstagram className="rounded-full text-3xl md:text-4xl bg-gradient-to-b from-pink-700 to-orange-400 via-red-500 p-2 hover:bg-gradient-to-b hover:from-pink-800 hover:to-orange-600 hover:via-red-700 " />
             </a>
             <a
               target="_newTab"
               href="https://www.youtube.com/channel/UCOI2_8463WfbJJKSBd4RI8g"
-              className="text-gray-400 hover:text-white transition"
+              className="text-red-600  transition"
             >
-              <FaYoutube className="text-red-500 hover:text-red-800" />
+              <FaYoutube className="bg-white text-3xl md:text-4xl p-2 rounded-full" />
             </a>
           </div>
         </motion.div>
@@ -120,7 +120,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: easeInOut }}
         >
-          <a href="https://igniup.com/" target="_Newblanks">
+          <a href="https://ignipulse.com/" target="_Newblanks">
             {" "}
             © 2025 IgniPulse All Rights Reserved
           </a>

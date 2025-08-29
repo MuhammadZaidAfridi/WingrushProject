@@ -32,7 +32,7 @@ function Header() {
           <ul className=" hidden  w-[700px] md:flex items-center  space-x-3 ml-3  lg:space-x-6 justify-center">
             {navLinksdata.map(({ _id, title, link }) => (
               <li
-                className="  text-base font-normal  tracking-wide cursor-pointer hover:text-orange-500 hover:font-semibold duration-300 hover:border-b-2 border-white hover:text-xl"
+                className="  text-xl font-normal  tracking-wide cursor-pointer hover:text-orange-500 hover:font-semibold duration-300 hover:border-b-2 border-white hover:text-xl"
                 key={_id}
               >
                 <Link
@@ -49,6 +49,7 @@ function Header() {
             ))}
           </ul>
 
+          {/* Mobile section  */}
           <ul
             className={`duration-500 md:hidden fixed top-16 w-full  sm:w-[500px] sm:text-center items-center justify-center p-20 h-screen
     ${toggle ? "left-0" : "left-[-100%]"} 
@@ -56,7 +57,7 @@ function Header() {
           >
             {navLinksdata.map(({ _id, title, link }) => (
               <li
-                className="font-normal  text-gray-400 tracking-wide cursor-pointer hover:text-orange-500 hover:border-b-2 border-amber-500 duration-300 py-3"
+                className="font-normal  text-gray-50 tracking-wide cursor-pointer hover:text-orange-500 hover:border-b-2 border-amber-500 duration-300 py-3"
                 key={_id}
               >
                 <Link
@@ -75,10 +76,9 @@ function Header() {
           </ul>
 
           <div className="flex items-center space-x-3.5">
-          
             <button className="bg-orange-500 px-3 text-xs md:px-5 hover:font-semibold py-1 text-white md:text-xl rounded-md hover:cursor-pointer shadow-[0_0_10px_rgba(200,200,200)] hover:scale-105 duration-500">
               <a
-                href="https://play.google.com/store/apps/details?id=com.ignipulse.TrackMaster&pcampaignid=web_share"
+                href="https://play.google.com/store/search?q=wingrush&c=apps&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
               >
